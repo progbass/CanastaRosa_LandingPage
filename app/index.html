@@ -22,19 +22,18 @@
     <div id="main_container">
       <header>
         <div class="menubar">
-          <img src="images/canastarosa_logo.svg" alt="Canasta Rosa Logo" class="logo">
+          <img src="images/canastarosa_logo2.svg" alt="Canasta Rosa Logo" class="logo">
         </div>
 
         <div class="banner_container">
           <div class="banner">
             <div class="title_container">
-              <h1>Insp&iacute;rate. Crea. Vende.</h1>
+              <h1>Ent&eacute;rate de nuestro exclusivo lanzamiento</h1>
 
-              <p>Descubre cientos de incre&iacute;bles productos elaborados artesanalmente por gente como t&uacute;.</p>
-              <p>Insp&iacute;rate y materializa tus ideas con nuestros tutoriales y v&eacute;ndelas a trav&eacute;s de una de las comunidades m&aacute;s grandes de Latino Am&eacute;rica.</p>
+              <p>Forma parte de esta gran comunidad de creadores y artesanos antes de su lanzamiento. Reg&iacute;strate gratis y recibe invitaciones a eventos y beneficios &uacute;nicos para comenzar a vender tus productos lo m&aacute;s pronto posible.</p>
 
               <h3>Esp&eacute;ralo pronto 2017</h3>
-              <a href="#">Vis&iacute;tanos en Facebook</a>
+              <a data-fancybox data-src="#registerForm" href="javascript:;">¡Reg&iacute;strate Gratis!</a>
             </div>
           </div>
 
@@ -114,10 +113,10 @@
 
       <section id="register">
         <div class="content">
-          <h2>Ent&eacute;rate de nuestro exclusivo lanzamiento</h2>
+          <h2>Insp&iacute;rate. Crea. Vende.</h2>
 
-          <p>Forma parte de esta gran comunidad de creadores y artesanos antes de su lanzamiento.
-          Reg&iacute;strate gratis y recibe invitaciones a eventos y beneficios &uacute;nicos para comenzar a vender tus productos lo m&aacute;s pronto posible.</p>
+          <p>Descubre cientos de incre&iacute;bles productos elaborados artesanalmente por gente como t&uacute;.<br>
+          Insp&iacute;rate y materializa tus ideas con nuestros tutoriales y v&eacute;ndelas a trav&eacute;s de una de las comunidades m&aacute;s grandes de Latino Am&eacute;rica.</p>
 
           <a data-fancybox data-src="#registerForm" href="javascript:;">Registrarme Gratis</a>
         </div>
@@ -139,6 +138,14 @@
         </div>
       </section>
 
+      <div id="invite_fixed">
+        <h4>Invita a tus amigos creadores y artesanos</h4>
+        <ul class="socialNetworks">
+          <li><a href="#" class="facebook">Comp&aacute;rtelo en Facebook</a></li>
+          <li><a data-fancybox data-src="#mailForm" href="javascript:;" class="mail">Env&iacute;ales un Email</a></li>
+        </ul>
+      </div>
+
 
       <footer>
         <ul id="gallery">
@@ -154,7 +161,8 @@
       </footer>
 
 
-      <div id="registerForm">
+      <div id="registerForm" class="modalForm">
+        <p>Texto introductorio en proceso de elaboración. Este es un texto de posición.</p>
         <form action="#" method="POST" id="register_form">
           <fieldset>
             <div class="data_holder">
@@ -165,6 +173,9 @@
             </div>
             <div class="data_holder">
               <input type="text" name="zip_txt" value="" placeholder="C&oacute;digo Postal">
+            </div>
+            <div class="data_holder">
+              <input type="text" name="phone_txt" value="" placeholder="Tel&eacute;fono">
             </div>
             <div class="data_holder">
               <select name="category_sct">
@@ -186,17 +197,15 @@
         </form>
       </div>
 
-      <div id="mailForm">
+      <div id="mailForm" class="modalForm">
+        <p>Texto introductorio en proceso de elaboración. Este es un texto de posición.</p>
         <form action="#" method="POST" id="mail_form">
           <fieldset>
             <div class="data_holder">
-              <input type="text" name="name_txt" value="" placeholder="Nombre Completo">
+              <input type="text" name="email_txt" value="" placeholder="Email de tus amigos">
             </div>
             <div class="data_holder">
-              <input type="text" name="email_txt" value="" placeholder="Email">
-            </div>
-            <div class="data_holder">
-              <textarea name="message_txt" ols="30" rows="10"></textarea>
+              <textarea name="message_txt" ols="30" rows="10">Hola :)  ¿Conoces Canasta Rosa? Creo que esta plataforma podría ser ideal para impulsar tu proyecto. Además si te registras antes del lanzamiento tendrás grandes beneficios, invitaciones a eventos y contenido que te ayudará a crecer tu negocio.</textarea>
             </div>
             <div class="data_holder">
               <input type="submit" name="submit_btn" value="Enviar">
