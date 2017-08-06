@@ -41,252 +41,34 @@
 
 
 .modalForm{
-    display: none;;
+  position: relative;
+  width: 90%;
+  max-width: 400px;
+
+  form{
     position: relative;
-    margin: 0 auto;
-    padding: 2em;
-    width: 90%;
-    max-width: 560px;
-    
-    color: #fff;
-    background: $color1;
-    text-align: center;
-    border-radius: 10px;
-    
-    h3{
-        font-weight: 300;
-        @extend .typl8-gamma;
-        text-shadow: -1px -1px 0px rgba(#000, .2);
-    }
-    h3, h4{
-        color: #fff;
+    width: 100%;
+    margin: 0; padding: 0;
+
+    .data_holder{
+      margin-bottom: .875em;
+
+      &:last-child{
         margin-bottom: .25em;
-    }
-    p{
-        color: $color2;
-        font-family: $font_main;
-        margin-bottom: .5em;
-    }
-    
-    .slider_container{
-        overflow: hidden;
-        position: relative;
-        background: #DC2964;
-        border-radius: 10px;
-        padding: 2em;
+      }
     }
 
-    form{
-        position: relative;
-        width: 100%;
-        margin: 0; padding: 0;
-        overflow: auto;
-        
-        ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-          color: lighten($color1, 10%);
-        }
-        ::-moz-placeholder { /* Firefox 19+ */
-          color: lighten($color1, 10%);
-        }
-        :-ms-input-placeholder { /* IE 10+ */
-          color: lighten($color1, 10%);
-        }
-        :-moz-placeholder { /* Firefox 18- */
-          color: lighten($color1, 10%);
-        }
-
-        .data_holder{
-            margin-bottom: .875em;
-
-            &:last-child{
-              margin-bottom: .25em;
-            }
-        }
-
-        input, textarea{
-            width: 100%;
-            max-width: 400px;
-            padding: .5em 1em;
-            margin: 0 auto;
-            border: 0;
-            border-radius: 20px;
-            
-            font-size: 1.18em;
-            font-family: $font-main;
-            text-shadow: 1px 1px 0px rgba(#000, .1);
-            background: darken($color1, 10%);
-            color: $color2;
-            
-        }
-        
-        fieldset{
-            overflow: hidden;
-            width: 100%;
-            position: relative;
-            float: left;
-        }
-        
-        input[type=submit]{
-            background: transparent;
-            color: #fff;
-            border: none;
-            width: auto;
-            display: inline-block;
-            font-family: $font-main; 
-            @extend .typl8-epsilon;
-        }
+    input, textarea{
+      width: 100%;
+      padding: .25em;
+      font-size: 1.18em;
     }
+  }
 }
-
-#registerForm{
-    padding-top: 3em;
-    
-    .icon{
-        display: none;
-        position: absolute;
-        @include responsive-container(100%);
-        transform: translate(-50%, -50%);
-        left: 50%; top:0;
-        width: 50%;
-        max-width: 100px;
-        background: url($path_images+'icon_canastaWhite.svg') no-repeat;
-    }
-    
-    nav.register_step{
-        position: relative;
-        display: inline-block;
-        margin-bottom: .5em;
-        
-        &:before{
-            content: '';
-            display: block;
-            width: 90%;
-            height: 2px;
-            background: darken($color1, 10%);
-            position: absolute;
-            top: 50%; transform: translateY(-50%)
-        }
-        
-        span{
-            display: inline-block;
-            margin: 0 2px;
-            background: darken($color1, 10%);
-            border-radius: 50px;
-            width: 13px;
-            @include responsive-container(100%);
-            
-            &.active{
-                &:before{
-                    background: #FFC5D8;
-                    border-radius: 50px;
-                    transform: scale(1.2)
-                }
-            }
-        }
-    }
-    
-    
-    .options_container{
-        position: relative;
-        
-        ul{
-            position: relative;
-            margin: 0 auto;
-            padding: 0;
-            list-style: none;
-            font-family: $font-main;
-            
-            li{
-                cursor: pointer;
-                padding: .75em 1.5em .5em;
-                display: inline-block;
-                margin-bottom: .5em;
-                
-                border-radius: 50px;
-                background: darken($color1, 8%);
-                transition: background-color 300ms ease;
-                
-                &:hover,
-                &.active{
-                    background: #fff;
-                    color: $color1;
-                }
-            }
-        }
-    }
-    
-    
-    .submit_container{
-        position: relative;
-        
-        a{
-            position: relative;
-            padding: 0 .92em 0 0;
-            display: inline-block;
-            color: #fff;
-            width: auto;
-            text-decoration: none;
-            font-family: $font-main;
-            @extend .typl8-epsilon;
-            letter-spacing: .08em;
-            transition: transform 200ms ease;
-            
-            &:before{
-                content: '>';
-                display: block;
-                position: absolute;
-                right: 0;
-            }
-            
-            &:hover{
-                transform: scale(1.1)
-            }
-        }
-        
-        input[type=submit]{
-            display: none;
-        }
-    }
-    
-    .slider_container{
-        width: 200%;
-        padding: 0;
-        margin-bottom: 1em;
-        display: flex;
-        transition: left 320ms ease;
-        left: 0;
-        
-        h4{
-            margin-bottom: 1em;;
-        }
-        
-        fieldset{
-            padding: 1em;
-            width: 50%;
-            align-self: center;
-                
-            &.step1{}
-            &.step2{
-                h4{
-                    padding: 0 10%;
-                    font-size: 1.25em;
-                    line-height: 1.3
-                }
-            }
-        }
-        
-        select{
-            display: none
-        }
-    }
-}
-
 #registerForm,
 #mailForm{
-    //display: none;
+  display: none;
 }
-
-
 
 
 // 
@@ -604,11 +386,9 @@ section#about{
     h2{
       color: $color1;
     }
-      
 
     span{
-      font-weight: bold;
-        color: $color1;
+      font-weight: bold
     }
   }
 }
@@ -671,17 +451,17 @@ section#features{
 
       &.inspire{
         .icon{
-          background-image: url($path_images+'icon_users.svg');
+          background-image: url($path_images+'icon_inspire.svg');
         }
       }
       &.buy{
         .icon{
-          background-image: url($path_images+'icon_pay.svg');
+          background-image: url($path_images+'icon_products.svg');
         }
       }
       &.sell{
         .icon{
-          background-image: url($path_images+'icon_pack.svg');
+          background-image: url($path_images+'icon_cart.svg');
         }
       }
     }    
