@@ -33,7 +33,7 @@
               <p>Forma parte de esta gran comunidad de creadores y artesanos antes de su lanzamiento. Reg&iacute;strate gratis y recibe invitaciones a eventos y beneficios &uacute;nicos para comenzar a vender tus productos lo m&aacute;s pronto posible.</p>
 
               <h3>Esp&eacute;ralo pronto 2017</h3>
-              <a data-fancybox data-src="#registerForm" href="javascript:;">¡Reg&iacute;strate Gratis!</a>
+              <a data-src="#registerForm" href="javascript: registerWindow.openWindow();">¡Reg&iacute;strate Gratis!</a>
             </div>
           </div>
 
@@ -96,17 +96,19 @@
           <p>Ustedes pueden crecer su negocio y formar parte de una de las plataformas que impulsan la creatividad m&aacute;s grandes de Latino Am&eacute;rica.</p>
 
           <ul class="socialNetworks">
-            <li><a href="#" class="facebook">Comp&aacute;rtelo en Facebook</a></li>
-            <li><a data-fancybox data-src="#mailForm" href="javascript:;" class="mail">Env&iacute;ales un Email</a></li>
+            <li><a href="javascript:window.SocialShare('facebook', 'http://www.canastarosa.com/');" class="facebook">Comp&aacute;rtelo en Facebook</a></li>
+            <li><a href="whatsapp://send?text=Forma parte del lanzamiento de Canasta Rosa" class="whatsapp">Whatsapp</a></li>
+            <li><a data-src="#mailForm" href="javascript:shareWindow.openWindow();" class="mail">Env&iacute;ales un Email</a></li>
           </ul>
         </div>
       </section>
 
       <div id="invite_fixed">
-        <h4>Invita a tus amigos creadores y artesanos</h4>
+        <h4>Invita a tus amigos al lanzamiento</h4>
         <ul class="socialNetworks">
-          <li><a href="#" class="facebook">Comp&aacute;rtelo en Facebook</a></li>
-          <li><a data-fancybox data-src="#mailForm" href="javascript:;" class="mail">Env&iacute;ales un Email</a></li>
+          <li><a href="javascript:window.SocialShare('facebook', 'http://www.canastarosa.com/');" class="facebook">Facebook</a></li>
+          <li><a href="whatsapp://send?text=Forma parte del lanzamiento de Canasta Rosa" class="whatsapp">Whatsapp</a></li>
+          <li><a data-src="#mailForm" href="javascript:shareWindow.openWindow();" class="mail">Email</a></li>
         </ul>
       </div>
 
@@ -138,54 +140,46 @@
         
         <form action="#" method="POST" id="register_form" onsubmit="return RegisterForm.submit()">
             <div class="slider_container">
-               <fieldset class="step1">
-                    <div class="data_holder">
-                        <h4>¿Qu&eacute; te gusta hacer y vender?</h4>
-                       
-                        <div class="options_container">
-                            <ul class="category_list">
-                                <li>&Aacute;reas de Inter&eacute;s</li>
-                                <li>Artesanias</li>
-                                <li>Comida</li>
-                                <li>Fiestas</li>
-                                <li>Manualidades</li>
-                                <li>Arte</li>
-                                <li>Joyer&iacute;a</li>
-                                <li>Ropa</li>
-                                <li>Regalos</li>
-                            </ul> 
-                       </div>
-                       
-                        <select name="category_sct">
-                            <option value="">&Aacute;reas de Inter&eacute;s</option>
-                            <option value="artesanias">Artesanias</option>
-                            <option value="comida">Comida</option>
-                            <option value="fiestas">Fiestas</option>
-                            <option value="manualidades">Manualidades</option>
-                            <option value="arte">Arte</option>
-                            <option value="joyeria">Joyer&iacute;a</option>
-                            <option value="ropa">Ropa</option>
-                            <option value="regalos">Regalos</option>
-                        </select>
-                    </div>
-                </fieldset>
+               <div class="slider">
+                   <fieldset class="step1">
+                       <div class="data_holder">
+                            <h4>¿Qu&eacute; te gusta hacer y vender?</h4>
+
+                            <div class="options_container">
+                                <ul class="category_list"></ul> 
+                            </div>
+
+                            <div class="categories">
+                                <label><input type="checkbox" name="category_sct[]" value="artesanias">Artesanias</input></label>
+                                <label><input type="checkbox" name="category_sct[]" value="comida">Comida</input></label>
+                                <label><input type="checkbox" name="category_sct[]" value="fiestas">Fiestas</input></label>
+                                <label><input type="checkbox" name="category_sct[]" value="manualidades">Manualidades</input></label>
+                                <label><input type="checkbox" name="category_sct[]" value="arte">Arte</input></label>
+                                <label><input type="checkbox" name="category_sct[]" value="joyeria">Joyer&iacute;a</input></label>
+                                <label><input type="checkbox" name="category_sct[]" value="ropa">Ropa</input></label>
+                                <label><input type="checkbox" name="category_sct[]" value="regalos">Regalos</input></label>   
+                            </div>
+                            
+                        </div>
+                    </fieldset>
                   
-                <fieldset class="step2">
-                    <h4>Asiste a eventos especiales exclusivos de nuestro lanzamiento</h4>
-                    
-                     <div class="data_holder">
-                      <input type="text" name="name_txt" value="" placeholder="Nombre Completo">
-                    </div>
-                    <div class="data_holder">
-                      <input type="text" name="email_txt" value="" placeholder="Email">
-                    </div>
-                    <div class="data_holder">
-                      <input type="text" name="zip_txt" value="" placeholder="C&oacute;digo Postal">
-                    </div>
-                    <div class="data_holder">
-                      <input type="text" name="phone_txt" value="" placeholder="Tel&eacute;fono">
-                    </div>
-                </fieldset>
+                    <fieldset class="step2">
+                        <h4>Asiste a eventos especiales exclusivos de nuestro lanzamiento</h4>
+
+                        <div class="data_holder">
+                          <input type="text" name="name_txt" value="" placeholder="Nombre Completo*">
+                        </div>
+                        <div class="data_holder">
+                          <input type="text" name="email_txt" value="" placeholder="Email*">
+                        </div>
+                        <div class="data_holder">
+                          <input type="text" name="zip_txt" value="" placeholder="C&oacute;digo Postal*">
+                        </div>
+                        <div class="data_holder">
+                          <input type="text" name="phone_txt" value="" placeholder="Tel&eacute;fono">
+                        </div>
+                    </fieldset>
+                </div>
             </div>
             
             
@@ -197,7 +191,7 @@
       </div>
 
       <div id="mailForm" class="modalForm">
-        <h4>Invita a tus amigos creadores y artesanos</h4>
+        <h3>Invita a tus amigos creadores y artesanos</h3>
         <p>Corre la voz, forma parte de la comunidad y disfruta de todos los beneficios de formar parte del pre-lanzamiento.</p>
         <form action="#" method="POST" id="invite_form" onsubmit="return InviteForm.submit()">
           <fieldset>
@@ -218,7 +212,6 @@
     </div>
     
 
-    <script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
     <!-- build:js scripts/vendor.js -->
     <!-- endbuild -->
     
