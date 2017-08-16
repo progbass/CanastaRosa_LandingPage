@@ -1,52 +1,6 @@
-//import '../../node_modules/@fancyapps/fancybox';
+const ModalWindow = require('./ModalWindow');
 
 
-// MODAL FORM 
-var ModalWindow = function(_target){
-    const modal_fragment = document.createDocumentFragment();
-    const modal_container = document.createElement('div');
-    
-    const background = document.createElement('div');
-    background.className = 'background';
-    background.setAttribute('style', "position: fixed; width: 100%; height: 100%; background: rgba(0,0,0,.45)");
-    
-    let targetContent = document.querySelector(_target);
-    let content = targetContent.parentNode.removeChild(targetContent);
-    //content.setAttribute("style", "position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%)");
-    
-    modal_fragment.appendChild(background);
-    modal_fragment.appendChild( content );
-    modal_container.appendChild( modal_fragment );
-    modal_container.className = 'modalWindow';
-    //modal_container.setAttribute("style", "position: relative; width: 100%; height: 100%; background: rgba(0,0,0,.4); top: 0; left: 0; z-index: 100");
-    
-    
-    modal_container.addEventListener('click', function(e){
-        e.stopPropagation();
-        if(e.target.className === 'background'){
-            closeWindow();
-        }
-    });
-    
-    
-    const closeWindow = function(){
-        modal_container.style.display = 'none';
-        document.querySelector('#main_container').style.position = 'relative';
-    }
-    const openWindow = function(){
-        modal_container.style.display = 'block';
-        document.querySelector('#main_container').style.position = 'fixed';
-    }
-    
-    
-    document.body.appendChild(modal_container);
-    closeWindow();
-    
-    return{
-        openWindow,
-        closeWindow
-    }
-};
 
 // Ajax Object
 window.AJAXObject = function(_url, _query, _callback){

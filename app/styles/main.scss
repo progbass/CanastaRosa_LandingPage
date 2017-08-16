@@ -5,7 +5,10 @@
 @import 'helpers';
 @import 'fonts';
 
+@import 'ModalWindow';
+
 @import '../../node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min';
+
 
 
 *{
@@ -44,16 +47,6 @@ html, body{
 } 
 
 
-
-.modalWindow{
-    position: relative;
-    padding: 5em 0;
-    
-    .background{
-        left: 0;
-        top: 0;
-    }
-}
 
 .modalForm{
     position: relative;
@@ -310,7 +303,7 @@ html, body{
             width: 200%;
             display: flex;
             position: relative;
-            transition: left 320ms ease;
+            transition: left 420ms ease-out 0s;
         }
         
         h4{
@@ -1081,7 +1074,7 @@ $invite_fixed_height: 50px;
 
     li{
       display: inline-block;
-      margin-left: .875em;
+      margin-left: 1em;
 
       a{
         color: lighten($color1, 40%);
@@ -1105,6 +1098,12 @@ $invite_fixed_height: 50px;
         background: url($path_images+'icon_mail2.svg') no-repeat 0 center;
         background-size: 27px;
       }
+      a.whatsapp{
+        padding-left: 2em;
+        background: url($path_images+'icon_whatsapp2.svg') no-repeat 0 center;
+        background-size: 22px;
+      }
+        
     }
   }
 
@@ -1208,6 +1207,11 @@ section#invite{
           background: url($path_images+'icon_facebook.svg') no-repeat 0 center;
           background-size: 22px;
         }
+        a.whatsapp{
+          padding-left: 2em;
+          background: url($path_images+'icon_whatsapp.svg') no-repeat 0 center;
+          background-size: 24px;
+        }
         a.mail{
           padding-left: 2.5em;
           background: url($path_images+'icon_mail.svg') no-repeat 0 center;
@@ -1218,11 +1222,13 @@ section#invite{
       @media screen and (min-width: 728px){
         li{
           display: inline-block;
-          margin: 0 1em;
+          margin: 0 .875em 0 0;
+          border-right: solid 1px $color6;
+          padding-right: .875em;
 
-          &:first-child{
-            border-right: solid 1px $color6;
-            padding-right: 2em;
+          &:last-child{
+              padding-right: 0;
+              border: 0
           }
         }
       }

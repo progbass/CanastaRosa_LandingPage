@@ -1,0 +1,51 @@
+
+@keyframes content{
+    0%{
+        top: 10vh;
+        opacity: 0;
+    }
+    100%{
+        top: 0;
+        opacity: 1
+    }
+}
+@keyframes visibilityMode{
+    0%{
+        display: block
+    }
+    100%{
+        display: none
+    }
+}
+
+.modalWindow{
+    position: fixed;
+    padding: 5em 0;
+    animation: visibilityMode 400ms 1 ease forwards 200ms; 
+    
+    &.active{
+        position: relative;
+        display: block;
+        
+        .background{
+            background: rgba(0,0,0,.45);
+        }
+        
+        .modalContent{
+            animation: content 400ms 1 ease forwards 200ms; 
+        }
+    }
+        
+    .modalContent{
+        opacity: 0;
+        animation: content 400ms 1 ease backwards 200ms;
+    }
+    
+    .background{
+        position: fixed;
+        left: 0; top: 0;
+        width: 100%; height: 100%;
+        background: rgba(0,0,0,0);
+        transition: background 200ms ease 200ms
+    }
+}
