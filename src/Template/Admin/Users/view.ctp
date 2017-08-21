@@ -3,41 +3,133 @@
   * @var \App\View\AppView $this
   */
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('Edit User'), ['action' => 'edit', $user->id]) ?> </li>
-        <li><?= $this->Form->postLink(__('Delete User'), ['action' => 'delete', $user->id], ['confirm' => __('Are you sure you want to delete # {0}?', $user->id)]) ?> </li>
-        <li><?= $this->Html->link(__('List Users'), ['action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New User'), ['action' => 'add']) ?> </li>
-    </ul>
-</nav>
-<div class="users view large-9 medium-8 columns content">
-    <h3><?= h($user->id) ?></h3>
-    <table class="vertical-table">
-        <tr>
-            <th scope="row"><?= __('Username') ?></th>
-            <td><?= h($user->username) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Email') ?></th>
-            <td><?= h($user->email) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Password') ?></th>
-            <td><?= h($user->password) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Profile Pic') ?></th>
-            <td><?= h($user->profile_pic) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Id') ?></th>
-            <td><?= $this->Number->format($user->id) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Date') ?></th>
-            <td><?= h($user->date) ?></td>
-        </tr>
-    </table>
-</div>
+<?php if($loggeduser->role == "Administrator"){?>
+<div class="wrapper">
+
+      <?php echo $this->element('/admin/header');?>
+      <?php echo $this->element('/admin/sidebar');?>
+
+      <!-- Content Wrapper. Contains page content -->
+      <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+          <h1>
+            Administrator Managemant
+            <small>Administrator View</small>
+          </h1>
+          <ol class="breadcrumb">
+           <li><a href="<?php echo $this->request->webroot.'admin/users/dashboard';?>"><i class="fa fa-dashboard"></i> <?php echo __('Home'); ?></a></li>
+           <li><a href="<?php echo $this->request->webroot.'admin/users';?>"><i class="fa fa-dashboard"></i> <?php echo __('Administrator Managemant'); ?></a></li>
+           <li class="active">Administrator View</li>
+          </ol>
+        </section>
+
+        <!-- Main content -->
+        <section class="content">
+          <div class="row">
+            <!-- left column -->
+            <div class="col-md-12">
+              <!-- general form elements -->
+              <div class="box box-primary">
+                <div class="box-header with-border">
+                  <h3 class="box-title"></h3>
+                </div><!-- /.box-header -->
+                <!-- form start -->
+                  <div class="box-body">
+                    <div class="form-group">
+                    <label for="exampleInputEmail1">Photo : </label>
+                      <?php if($user->profile_pic){ ?>
+                        <img src='<?php echo $this->request->webroot.'files/user/'.$user->profile_pic;?>' style="width:150px;height:150px;border-radius: 50%;">
+                       <?php } else { ?>
+             <div class="circle_admincandidate">
+                 <p>N/A</p>
+             </div>
+					 <?php }  ?>
+                    </div>
+				    <div class="form-group">
+                      <label for="exampleInputEmail1">Role : </label>
+                       <?= $user->role; ?>
+                    </div>
+		<div class="form-group">
+				 <label for="exampleInputEmail1">Username : </label>
+                      <?= h($user->username) ?>
+                </div>
+                    <div class="form-group">
+					<label for="exampleInputEmail1">email : </label>
+                      <?= h($user->email) ?>
+                    </div>
+					<div class="form-group">
+					<label for="exampleInputEmail1">address : </label>
+                      <?= h($user->address) ?>
+                    </div>
+					<div class="form-group">
+                      <label for="exampleInputPassword1">Gender: </label>
+					  <?php
+                    if ($user->gender == 'Male') {
+                        echo 'Male';
+                    } else {
+                        echo "Female";
+                    }
+                    ?>
+                        </div>
+						<div class="form-group">
+						<label for="exampleInputEmail1">Mobile No.: </label>
+                      <?php echo $user->mobile_no; ?>
+						</div>
+            <div class="form-group">
+            <label for="exampleInputEmail1">Description : </label>
+                      <?php echo $user->description; ?>
+            </div>
+						<div class="form-group">
+						<label for="exampleInputPassword1">Status : </label>
+						<?php
+                    if ($user->status == 1) {
+                        echo 'Active';
+                    } else {
+                        echo "Deactive";
+                    }
+                    ?>
+					   </div>
+                      <div class="form-group">
+            <label for="exampleInputEmail1">Date : </label>
+                      <?php echo $user->date; ?>
+            </div>
+            </div>
+
+                    </div>
+                  </div><!-- /.box-body -->
+                <?php echo $this->Form->end();?>
+              </div><!-- /.box -->
+            </div><!--/.col (left) -->
+          </div>   <!-- /.row -->
+        </section><!-- /.content -->
+      </div><!-- /.content-wrapper -->
+      <?php echo $this->element('/admin/footer');?>
+
+      <div class="control-sidebar-bg"></div>
+    </div><!-- ./wrapper -->
+    <?php } else {
+    echo '<h2>Sorry,You are not Authorised</h2>';
+  }
+  ?>
+<style>
+.circle_admincandidate{
+    position:relative;
+    background:#666;
+    width:110px;
+    height:110px;
+    text-align:center;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    border-radius: 50px;
+}
+.circle_admincandidate p
+{
+    font:italic 52px Georgia;
+    color:#fff;
+    vertical-align:middle;
+    height:50px;
+    position: inherit;
+    top:15%;
+}
+</style>

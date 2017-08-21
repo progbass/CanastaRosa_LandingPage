@@ -1,61 +1,51 @@
-
-<body class="hold-transition login-page">
-<div class="login-box">
-  <div class="login-logo">
-    <a href="../../index2.html"><b>Admin</b>LTE</a>
-  </div>
-  <!-- /.login-logo -->
-  <div class="login-box-body">
-    <p class="login-box-msg">Sign in to start your session</p>
-
-    <form action="/canastaroca/admin/users/login" method="post">
-      <div class="form-group has-feedback">
-          <input type="email" name="email" class="form-control" placeholder="Email">
-        <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
-      </div>
-      <div class="form-group has-feedback">
-          <input type="password" name="password" class="form-control" placeholder="Password">
-        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-      </div>
-      <div class="row">
-        <div class="col-xs-8">
-          <div class="checkbox icheck">
-            <label>
-              <input type="checkbox"> Remember Me
-            </label>
+  <div class="login-box">
+      <div class="login-logo">
+        <a href="<?php echo $this->request->webroot;?>">Canastaroca</a>
+      </div><!-- /.login-logo -->
+      <div class="login-box-body">
+		<div>
+			<?php $x = $this->Flash->render(); ?>
+			<?php if ($x) { ?>
+				<div class="alert success">
+					<span class="icon"></span>
+					<strong></strong><?php echo $x; ?>
+				</div>
+			<?php } ?>
+		</div>
+        <p class="login-box-msg">Sign in to start your session</p>
+        <?= $this->Form->create() ?>
+          <div class="form-group has-feedback">
+            <input type="email" name='email' class="form-control" placeholder="Email" required>
+            <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
           </div>
-        </div>
-        <!-- /.col -->
-        <div class="col-xs-4">
-          <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
-        </div>
-        <!-- /.col -->
-      </div>
-    </form>
+          <div class="form-group has-feedback">
+            <input type="password" name='password' class="form-control" placeholder="Password" required>
+            <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+          </div>
+          <div class="row">
+            <div class="col-xs-4">
+              <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
+            </div><!-- /.col -->
+          </div>
+        <?php echo $this->Form->end();?>
 
-<!--    <div class="social-auth-links text-center">
-      <p>- OR -</p>
-      <a href="#" class="btn btn-block btn-social btn-facebook btn-flat"><i class="fa fa-facebook"></i> Sign in using
-        Facebook</a>
-      <a href="#" class="btn btn-block btn-social btn-google btn-flat"><i class="fa fa-google-plus"></i> Sign in using
-        Google+</a>
-    </div>-->
-    <!-- /.social-auth-links -->
+        <!-- <a href="<?php //echo $this->Html->url(array('controller' => 'users', 'action' => 'admin_forgetpwd')); ?>">I forgot my password</a><br> -->
 
-    <a href="#">I forgot my password</a><br>
-    <a href="register.html" class="text-center">Register a new membership</a>
-
-  </div>
-  <!-- /.login-box-body -->
-
-<script>
-  $(function () {
-    $('input').iCheck({
-      checkboxClass: 'icheckbox_square-blue',
-      radioClass: 'iradio_square-blue',
-      increaseArea: '20%' // optional
-    });
-  });
-</script>
-</body>
-</html>
+      </div><!-- /.login-box-body -->
+    </div><!-- /.login-box -->
+	</body>
+	<?php 
+	echo $this->Html->css(array(
+                '/admin/plugins/iCheck/flat/blue'
+				));
+	?>
+	<style>
+	.sidebar-mini {
+    background: #d2d6de none repeat scroll 0 0;
+}
+.message.error {
+    color: red;
+    font-size: 15px;
+}
+.message.success{color: red;font-size: 15px;}
+	</style>

@@ -13,7 +13,7 @@ class UsersController extends AppController {
 
     public function beforeFilter(\Cake\Event\Event $event) {
         parent::beforeFilter($event);
-        $this->Auth->allow('add');
+        $this->Auth->allow('add','login','logout');
         $this->viewBuilder()->layout('admin');
     }
 
@@ -119,5 +119,17 @@ class UsersController extends AppController {
             }
         }
     }
+    
+    public function logout()
+    {
+        $this->Flash->success('You successfully have loged out');
+        return $this->redirect(['action'=>'login']);
+
+    }
+    
+    public function dashboard() {
+        $totaluser = $this->Users->find('all')->count();
+        $this->set("totaluser", $totaluser);
+	}
 
 }

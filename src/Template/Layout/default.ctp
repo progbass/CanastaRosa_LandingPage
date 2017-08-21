@@ -20,13 +20,25 @@
 <head>
     <?= $this->Html->charset() ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8"><meta name="description" content=""><meta name="viewport" content="width=device-width,initial-scale=1">
+<!--        <title>Canasta Rosa :: Pr&oacute;ximamente 2017</title>-->
+        <meta property="og:title" content="Canasta Rosa :: La Comunidad de Creadores y Artesanos.">
+        <meta property="og:image" content="http://canastarosa.com/fb_share.jpg">
+        <meta property="og:site_name" content="Canasta Rosa">
+        <meta property="og:url" content="http://canastarosa.com/">
+        <meta property="og:description" content="Canasta Rosa es una plataforma digital que conecta inspiración e ideas con productos únicos. Forma parte de nuestra comunidad e Inspirate, Crea y Vende.">
+        <meta property="og:locale:alternate" content="es_ES">
     <title>
        
         <?= $this->fetch('title') ?>
     </title>
     <?= $this->Html->meta('icon') ?>
-    <?= $this->Html->css(['bootstrap.min','main']) ?>
-    <?=$this->Html->script(['jquery-2.2.3.min','bootstrap.min','main'])?>
+    <?= $this->Html->css(['main']) ?>
+    <?=$this->Html->script([
+        'jquery-2.2.3.min',
+        'jquery.min',
+        'bootstrap.min',
+        ])?>
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>
     <?= $this->fetch('script') ?>

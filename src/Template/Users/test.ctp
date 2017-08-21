@@ -1,0 +1,141 @@
+<html lang="">
+    <head>
+        <meta charset="utf-8"><meta name="description" content="">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <title>Canasta Rosa :: Pr&oacute;ximamente 2017</title>
+        <meta property="og:title" content="Canasta Rosa :: La Comunidad de Creadores y Artesanos.">
+        <meta property="og:image" content="http://canastarosa.com/fb_share.jpg">
+        <meta property="og:site_name" content="Canasta Rosa">
+        <meta property="og:url" content="http://canastarosa.com/">
+        <meta property="og:description" content="Canasta Rosa es una plataforma digital que conecta inspiración e ideas con productos únicos. Forma parte de nuestra comunidad e Inspirate, Crea y Vende.">
+        <meta property="og:locale:alternate" content="es_ES">
+        <link rel="apple-touch-icon" href="apple-touch-icon.png"><!-- build:css styles/vendor.css --><!-- endbuild --><!-- build:css styles/main.css -->
+
+    <body>
+        <div id="main_container">
+            <header>
+                <div class="menubar">
+                    <img src="images/canastarosa_logo2.svg" alt="Canasta Rosa Logo" class="logo">
+                </div>
+                <div class="banner_container">
+                    <div class="banner">
+                        <div class="title_container">
+                            <h1>Ent&eacute;rate de nuestro exclusivo lanzamiento</h1>
+                            <p>Forma parte de esta gran comunidad de creadores y artesanos antes de su lanzamiento. Reg&iacute;strate gratis y recibe invitaciones a eventos y beneficios &uacute;nicos para comenzar a vender tus productos lo m&aacute;s pronto posible.</p>
+                            <h3>Esp&eacute;ralo pronto 2017</h3>
+                            <a data-src="#registerForm" href="javascript: registerWindow.openWindow();">¡Reg&iacute;strate Gratis!</a>
+                        </div></div>
+                    <div class="content">
+                        <p>Encuentra cientos de originales productos elaborados artesanalmente por gente como t&uacute;.</p>
+                        <p>Materializa tus ideas con nuestros tutoriales, ar&iacute;culos y colecciones de inspiración y v&eacute;ndelos a trav&eacute;s de una de las comunidades m&aacute;s grandes de Latino Am&eacute;rica.</p>
+                        <h3>Esp&eacute;ralo pronto 2017</h3>
+                    </div>
+                </div>
+            </header>
+            <section id="about">
+                <div class="content">
+                    <h2>¿Qu&eacute; es Canasta Rosa?</h2>
+                    <h3>Canasta Rosa es una plataforma digital que conecta inspiración e ideas con productos únicos.
+                        <br>Forma parte de nuestra comunidad e <span>Inspirate</span>, 
+                        <span>Crea</span> y <span>Vende</span>.</h3></div>
+            </section>
+            <section id="features">
+                <div class="content"><h2>¿Por qu&eacute; unirme a Canasta Rosa?</h2>
+                    <ul class="features_list">
+                        <li class="inspire">
+                            <div class="icon"></div>
+                            <h4>Alcanza a millones de usuarios</h4>
+                            <p>Exp&oacute;n tu negocio a millones de usuarios y deja que descubran tus productos mientras exploran nuestra tienda, original contenido y redes sociales.</p>
+                        </li>
+                        <li class="buy">
+                            <div class="icon"></div>
+                            <h4>Pagos f&aacute;ciles y seguros</h4>
+                            <p>Cierra m&aacute;s ventas recibiendo pagos con tarjeta de cr&eacute;dito/debito, paypal, transferencias y dep&oacute;sitos. Asegura tu pago antes de elaborar tus productos.</p>
+                        </li>
+                        <li class="sell">
+                            <div class="icon">
+
+                            </div><h4>Env&iacute;os r&aacute;pidos y confiables</h4>
+                            <p>Expande tu negocio enviando tus productos de forma r&aacute;pida y segura. Conoce detalles de tu env&iacute;o como rastreo, hora de entrega y aprovecha tarifas preferenciales.</p>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <section id="invite">
+                <div class="content">
+                    <div class="icon">
+
+                    </div>
+                    <h3>Invita a tus amigos creadores y artesanos</h3>
+                    <h4>¿Tienes o conoces a alguien con productos e ideas incre&iacute;bles?</h4>
+                    <p>Ustedes pueden crecer su negocio y formar parte de una de las plataformas que impulsan la creatividad m&aacute;s grandes de Latino Am&eacute;rica.</p>
+                    <ul class="socialNetworks">
+                        <li class="facebook">
+                            <a href="javascript:window.SocialShare('facebook', 'http://www.canastarosa.com/');">Comp&aacute;rtelo en Facebook</a>
+                        </li>
+                        <li class="whatsapp">
+                            <a href="whatsapp://send?text=http://canastarosa.com">Whatsapp</a></li>
+                        <li class="mail"><a data-src="#mailForm" href="javascript:shareWindow.openWindow();">Env&iacute;ales un Email</a></li>
+                    </ul>
+                </div>
+            </section>
+            <div id="invite_fixed"><h4>Invita a tus amigos al lanzamiento</h4>
+                <ul class="socialNetworks">
+                    <li class="facebook"><a href="javascript:window.SocialShare('facebook', 'http://www.canastarosa.com/');">Facebook</a>
+                    </li>
+                    <li class="whatsapp"><a href="whatsapp://send?text=http://canastarosa.com">Whatsapp</a></li>
+                    <li class="mail"><a data-src="#mailForm" href="javascript:shareWindow.openWindow();">Email</a>
+                    </li></ul></div><footer><ul id="gallery"><li><img src="images/gallery3.png" alt="#"></li>
+                    <li><img src="images/gallery2.png" alt="#"></li>
+                    <li><img src="images/gallery1.jpg" alt="#"></li>
+                    <li><img src="images/gallery0.png" alt="#"></li>
+                </ul>
+                <div class="content">Canasta Rosa™ 2017 . <a href="mailto:info@canastarosa.com">info@canastarosa.com</a>
+                </div>
+            </footer>
+            <div id="registerForm" class="modalForm"><div class="icon">
+
+                </div>
+                <h3>¡Bienvenido@ a Canasta Rosa!</h3>
+                <p>Est&aacute;s a 2 pasos de formar parte de nuestra comunidad.</p>
+                <nav class="register_step"><span class="active"></span> <span></span>
+                </nav>
+                <form action="#" method="POST" id="register_form" onsubmit="return RegisterForm.submit()">
+                    <div class="slider_container">
+                        <div class="slider"><fieldset class="step1">
+                                <div class="data_holder"><h4>¿Qu&eacute; te gusta hacer y vender?</h4>
+                                    <div class="options_container"><ul class="category_list"></ul></div>
+                                    <div class="categories"><label></label>
+                                        <label><input type="checkbox" name="category_sct[]" value="comida">Comida</label>
+                                        <label><input type="checkbox" name="category_sct[]" value="fiestas">Fiestas</label>
+                                        <label><input type="checkbox" name="category_sct[]" value="manualidades">Manualidades</label>
+                                        <label><input type="checkbox" name="category_sct[]" value="arte">Arte</label>
+                                        <label><input type="checkbox" name="category_sct[]" value="joyeria">Joyer&iacute;a</label>
+                                        <label><input type="checkbox" name="category_sct[]" value="ropa">Ropa</label>
+                                        <label><input type="checkbox" name="category_sct[]" value="regalos">Regalos</label>
+                                    </div>
+                                </div>
+                            </fieldset>
+                            <fieldset class="step2">
+                                <h4>Asiste a eventos especiales exclusivos de nuestro lanzamiento</h4>
+                                <div class="data_holder"><input type="text" name="name_txt" value="" placeholder="Nombre Completo*"></div>
+                                <div class="data_holder"><input type="text" name="email_txt" value="" placeholder="Email*"></div>
+                                <div class="data_holder"><input type="text" name="zip_txt" value="" placeholder="C&oacute;digo Postal*"></div>
+                                <div class="data_holder"><input type="text" name="phone_txt" value="" placeholder="Tel&eacute;fono"></div>
+                            </fieldset>
+                        </div></div>
+                    <div class="submit_container">
+                        <a href="#" class="nav">Siguiente</a> 
+                        <input type="submit" name="submit_btn" value="Registrarme"></div>
+                </form>
+            </div>
+            <div id="mailForm" class="modalForm"><h3>Invita a tus amigos creadores y artesanos</h3><p>Corre la voz, forma parte de la comunidad y disfruta de todos los beneficios de formar parte del pre-lanzamiento.</p><form action="#" method="POST" id="invite_form" onsubmit="return InviteForm.submit()"><fieldset><div class="data_holder"><input type="text" name="email_txt" value="" placeholder="Email de tus amigos"></div><div class="data_holder"><textarea name="message_txt" cols="30" rows="9">¿Conoces Canasta Rosa?&#013;Es la plataforma digital que conecta inspiración con productos únicos y originales.&#010;&#013;Registrate para formar parte de su lanzamiento exclusivo y recibe invitaciones a eventos, tutoriales y grupos para poder vender tus creaciones.
+                            </textarea>
+                        </div>
+                        <div class="data_holder"><input type="submit" name="submit_btn" value="Enviar"></div>
+                    </fieldset>
+                </form>
+            </div>
+        </div><!-- build:js scripts/vendor.js --><!-- endbuild --><!-- build:js scripts/main.js  -->
+    </body>
+</html>

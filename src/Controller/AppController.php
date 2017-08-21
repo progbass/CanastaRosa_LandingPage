@@ -80,6 +80,13 @@ class AppController extends Controller {
     public function beforeFilter(Event $event) {
         parent::beforeFilter($event);
         $this->Auth->allowedActions = array('display');
+        
+       $cat=  \Cake\ORM\TableRegistry::get('Categories');
+       $this->set("category",$cat->find("all"));
+       
+       $User =  \Cake\ORM\TableRegistry::get('Users');
+       $loggedId = $User->find()->where(['id' => $this->Auth->user('id')])->first(); 
+       $this->set("loggeduser",$loggedId); 
     }
 
 }
