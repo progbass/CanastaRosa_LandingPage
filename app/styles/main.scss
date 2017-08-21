@@ -134,7 +134,10 @@ html, body{
         
         textarea{
             border-radius: 5px;
-            font-size: 1em
+            font-size: 1em;
+            background: lighten($color1, 43%);
+            color: $color5;
+            text-shadow: none;
         }
         
         fieldset{
@@ -1036,7 +1039,7 @@ section#register{
 $invite_fixed_height: 50px;
 #invite_fixed{
   height: $invite_fixed_height;
-  padding: .5em 1em .2em;
+  padding: .5em 0em .2em;
   line-height: 1.5em; //3em;
   width: 100%;
   position: fixed;
@@ -1089,42 +1092,82 @@ $invite_fixed_height: 50px;
           color: darken($color1, 40%)
         }
       }
-      a.facebook{
-        background: url($path_images+'icon_facebook2.svg') no-repeat 0 center;
-        background-size: 19px;
+      &.facebook{
+          a{
+            background: url($path_images+'icon_facebook2.svg') no-repeat 0 center;
+            background-size: 19px;
+          }
       }
-      a.mail{
-        padding-left: 2em;
-        background: url($path_images+'icon_mail2.svg') no-repeat 0 center;
-        background-size: 27px;
+      &.mail{
+          a{
+            padding-left: 2em;
+            background: url($path_images+'icon_mail2.svg') no-repeat 0 center;
+            background-size: 27px;
+          }
       }
-      a.whatsapp{
-        padding-left: 2em;
-        background: url($path_images+'icon_whatsapp2.svg') no-repeat 0 center;
-        background-size: 22px;
+      &.whatsapp{
+          display: none;
+          
+          a{
+            padding-left: 2em;
+            background: url($path_images+'icon_whatsapp2.svg') no-repeat 0 center;
+            background-size: 22px;
+          }
       }
         
     }
   }
 
+    
+    
+    @media screen and (max-width: 340px){
+        &:hover,
+        &.active{
+            height: 100px !important;
+        }
+        
+        ul{
+          width: 100%;
+          background: $color1;
+          margin: .75em auto;
+        
+            li{
+                @include hide-text();
+                
+                a{
+                    @include responsive-container(100%);
+                    width: 28px;
+                    background-size: contain !important;
+                }
+                &.mail{
+                    a{
+                        position: relative;
+                        @include responsive-container(percentage(25/40));
+                        width: 33px;
+                        top: -4px;
+                    }
+                }
+            }
+        }
+    }
+    
 
-  @media screen and (max-width: 800px){
+  @media screen and (max-width: 620px){
     $invite_fixed_height: 40px;
-    height: auto;
-    transition: bottom 260ms ease, top 260ms ease;
-    top: calc(100% - #{$invite_fixed_height});
+    height: $invite_fixed_height;
+    transition: height 260ms ease;
+    top: auto;
+    bottom: 0;
+      
 
-    &:hover{
-      top: auto;
-        bottom: 0;
-      //transform: translateY(-100%)
+    &:hover,
+    &.active{
+        height: 90px;
     }
       
-      h4{
-          //position: absolute;
-          //padding-top: .75em;
-          width: 80%;
-      }
+    h4{
+        padding: 0 15px;
+    }
 
     ul{
       width: 100%;
@@ -1132,9 +1175,14 @@ $invite_fixed_height: 50px;
       margin: .75em auto;
         
         li{
-            display: block;
-            margin-left: 0;
-            margin-bottom: .25em
+            margin: 0 12px 8em;
+            
+            &:first-child{ margin-left: 0 }
+            &:last-child{ margin-right: 0; margin-bottom: 0 }
+            
+            &.whatsapp{
+                display: inline-block;
+            }
         }
     }
   }
@@ -1203,20 +1251,35 @@ section#invite{
           display: inline-block;
           padding: .25em 0 .25em 2em;
         }
-        a.facebook{
-          background: url($path_images+'icon_facebook.svg') no-repeat 0 center;
-          background-size: 22px;
+        &.facebook{
+            a{
+              background: url($path_images+'icon_facebook.svg') no-repeat 0 center;
+              background-size: 22px;
+            }
         }
-        a.whatsapp{
-          padding-left: 2em;
-          background: url($path_images+'icon_whatsapp.svg') no-repeat 0 center;
-          background-size: 24px;
+        &.whatsapp{
+            display: none;
+            
+            a{
+              padding-left: 2em;
+              background: url($path_images+'icon_whatsapp.svg') no-repeat 0 center;
+              background-size: 24px;
+            }
         }
-        a.mail{
-          padding-left: 2.5em;
-          background: url($path_images+'icon_mail.svg') no-repeat 0 center;
-          background-size: 30px;
+        &.mail{
+            a{
+              padding-left: 2.5em;
+              background: url($path_images+'icon_mail.svg') no-repeat 0 center;
+              background-size: 30px;
+            }
         }
+      }
+        
+        
+      @media screen and (max-width: 620px){
+          li.whatsapp{
+            display: block
+          }    
       }
 
       @media screen and (min-width: 728px){

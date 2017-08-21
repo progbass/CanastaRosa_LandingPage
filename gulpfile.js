@@ -33,7 +33,7 @@ gulp.task('styles', function () {
       }
     }))
     .pipe(gulp.dest('./dist/styles'))
-    .pipe(browserSync.stream());
+    .pipe(browserSync.reload({ stream:true }));
 });
 
 
@@ -64,14 +64,14 @@ gulp.task("js", function () {
     }))*/
     .pipe(sourcemaps.write())
     .pipe(gulp.dest("./dist/scripts"))
-    .pipe(browserSync.stream());
+    .pipe(browserSync.reload({ stream:true }));
 });
 
 gulp.task('html', function () {
   return gulp.src('app/*.html')
     .pipe(htmlmin({collapseWhitespace: true}))
     .pipe(gulp.dest('dist'))
-    .pipe(browserSync.stream());
+    .pipe(browserSync.reload({ stream:true }));
 });
 
 
@@ -86,7 +86,7 @@ gulp.task('images', () => {
       svgoPlugins: [{cleanupIDs: false}]
     })))
     .pipe(gulp.dest('./dist/images'))
-    .pipe(browserSync.stream());
+    .pipe(browserSync.reload({ stream:true }));
 });
 
 
@@ -95,7 +95,7 @@ gulp.task('fonts', () => {
       './app/fonts/**/*'
     ])
     .pipe(gulp.dest('./dist/fonts'))
-    .pipe(browserSync.stream());
+    .pipe(browserSync.reload({ stream:true }));
 });
 
 
