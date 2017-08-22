@@ -86,10 +86,7 @@ window.RegisterForm = function () {
     var register_submit = register_form.querySelector('input[type=submit]');
     var register_nav = register_container.querySelector('a.nav');
     var register_stepsContainer = register_container.querySelector('.register_step');
-    var register_fields = [register_form.querySelector('input[name=name_txt]'),register_form.querySelector('input[name=email_txt]'), register_form.querySelector('input[name=zip_txt]'),register_form.querySelector('input[name=phone_txt]')];
-   // alert(register_fields);
-    //var register_fieldss = [];
-  //  var categoriesHolders = register_fieldss.querySelector('.category_listss');
+    var register_fields = [register_form.querySelector('input[name=name_txt]'), register_form.querySelector('input[name=email_txt]'), register_form.querySelector('input[name=zip_txt]'), register_form.querySelector('input[name=phone_txt]')];
 
     var categoriesHolder = register_container.querySelector('.category_list');
     var categories = [].slice.call(register_container.querySelectorAll('input[type=checkbox]'));
@@ -99,8 +96,6 @@ window.RegisterForm = function () {
             var category = document.createElement('li');
             category.innerHTML = option.parentNode.textContent;
             category.setAttribute('data-category', option.value);
-
-
 
             category.addEventListener('click', function () {
                 this.classList.toggle('active');
@@ -112,15 +107,11 @@ window.RegisterForm = function () {
                     if (catList[i].classList.contains('active')) {
                         if (categories[i].value === catList[i].getAttribute('data-category')) {
                             categories[i].checked = true;
-                            $('input:checkbox[value="' + catList[i].getAttribute('data-category') + '"]').attr('checked', true);
-                             selectedCategories.push(categories[i]);
-                             alert(catList[i].getAttribute('data-category'));
-
+                            selectedCategories.push(categories[i]);
                         }
                     } else {
                         categories[i].checked = false;
                     }
-
                 };
 
                 if (!selectedCategories.length) {
@@ -165,7 +156,7 @@ window.RegisterForm = function () {
     };
 
     var validateForm = function validateForm() {
-        register_submit.style.visibility = 'visible';
+        register_submit.style.visibility = 'hidden';
         var isValid = false;
 
         for (var i = 0; i < register_fields.length; i++) {
@@ -187,11 +178,6 @@ window.RegisterForm = function () {
                     //regex = /^([1-9]\d{1}-\d{4}-\d{4}|[1-9]\d{2}-\d{3}-\d{4})$/;
                     //isValid = (regex.test(register_fields[i].value));
                     break;
-                case 'cate_txt':
-                    //regex = /^([1-9]\d{1}-\d{4}-\d{4}|[1-9]\d{2}-\d{3}-\d{4})$/;
-                    //isValid = (regex.test(register_fields[i].value));
-                    break;
-
             }
 
             if (!isValid) break;

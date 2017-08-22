@@ -1,0 +1,21 @@
+[20-Aug-2017 08:25:24 UTC] PHP Parse error:  syntax error, unexpected '<' in /home/manorma/public_html/canastaroca/src/Template/Admin/Users/index.ctp on line 79
+[20-Aug-2017 08:26:23 UTC] PHP Parse error:  syntax error, unexpected '<' in /home/manorma/public_html/canastaroca/src/Template/Admin/Users/index.ctp on line 79
+[20-Aug-2017 08:27:28 UTC] PHP Parse error:  syntax error, unexpected '<' in /home/manorma/public_html/canastaroca/src/Template/Admin/Users/index.ctp on line 79
+[20-Aug-2017 08:29:46 UTC] PHP Parse error:  syntax error, unexpected '<' in /home/manorma/public_html/canastaroca/src/Template/Admin/Users/index.ctp on line 79
+[20-Aug-2017 08:47:12 UTC] PHP Parse error:  syntax error, unexpected '<' in /home/manorma/public_html/canastaroca/src/Template/Admin/Users/index.ctp on line 79
+[20-Aug-2017 08:58:37 UTC] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in /home/manorma/public_html/canastaroca/src/Template/Element/admin/header.ctp on line 7
+[20-Aug-2017 08:58:41 UTC] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in /home/manorma/public_html/canastaroca/src/Template/Element/admin/header.ctp on line 7
+[20-Aug-2017 14:54:27 UTC] PHP Fatal error:  Call to a member function find() on boolean in /home/manorma/public_html/canastaroca/src/Controller/Admin/UsersController.php on line 131
+[20-Aug-2017 14:56:01 UTC] PHP Fatal error:  Call to a member function find() on boolean in /home/manorma/public_html/canastaroca/src/Controller/Admin/UsersController.php on line 131
+[20-Aug-2017 14:56:07 UTC] PHP Fatal error:  Call to a member function find() on boolean in /home/manorma/public_html/canastaroca/src/Controller/Admin/UsersController.php on line 131
+[20-Aug-2017 14:58:16 UTC] PHP Fatal error:  Call to a member function find() on boolean in /home/manorma/public_html/canastaroca/src/Controller/Admin/UsersController.php on line 131
+[20-Aug-2017 15:00:13 UTC] PHP Fatal error:  Call to a member function find() on boolean in /home/manorma/public_html/canastaroca/src/Controller/Admin/UsersController.php on line 131
+[21-Aug-2017 07:38:40 UTC] PHP Parse error:  syntax error, unexpected '(', expecting identifier (T_STRING) or variable (T_VARIABLE) or '{' or '$' in /home/manorma/public_html/canastaroca/src/Controller/UsersController.php on line 205
+[21-Aug-2017 07:41:48 UTC] PHP Parse error:  syntax error, unexpected '(', expecting identifier (T_STRING) or variable (T_VARIABLE) or '{' or '$' in /home/manorma/public_html/canastaroca/src/Controller/UsersController.php on line 205
+[21-Aug-2017 07:46:17 UTC] PHP Parse error:  syntax error, unexpected '(', expecting identifier (T_STRING) or variable (T_VARIABLE) or '{' or '$' in /home/manorma/public_html/canastaroca/src/Controller/UsersController.php on line 205
+[21-Aug-2017 07:48:34 UTC] PHP Parse error:  syntax error, unexpected '(', expecting identifier (T_STRING) or variable (T_VARIABLE) or '{' or '$' in /home/manorma/public_html/canastaroca/src/Controller/UsersController.php on line 205
+[21-Aug-2017 07:55:12 UTC] PHP Fatal error:  Call to undefined method App\Controller\UsersController::rendor() in /home/manorma/public_html/canastaroca/src/Controller/UsersController.php on line 170
+[21-Aug-2017 08:15:41 UTC] PHP Fatal error:  Call to undefined method App\Controller\UsersController::rendor() in /home/manorma/public_html/canastaroca/src/Controller/UsersController.php on line 210
+[21-Aug-2017 08:45:54 UTC] PHP Fatal error:  Call to undefined method App\Controller\UsersController::rendor() in /home/manorma/public_html/canastaroca/src/Controller/UsersController.php on line 210
+[21-Aug-2017 15:16:37 UTC] PHP Fatal error:  Call to undefined method App\Controller\UsersController::rendor() in /home/manorma/public_html/canastaroca/src/Controller/UsersController.php on line 207
+[21-Aug-2017 17:44:31 UTC] PHP Fatal error:  Call to a member function newEntity() on null in /home/manorma/public_html/canastaroca/src/Controller/UsersController.php on line 152
