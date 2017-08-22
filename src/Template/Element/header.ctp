@@ -7,7 +7,7 @@
                         <div class="title_container"><h1>Ent&eacute;rate de nuestro exclusivo lanzamiento</h1>
                             <p>Forma parte de esta gran comunidad de creadores y artesanos antes de su lanzamiento. Reg&iacute;strate gratis y recibe invitaciones a eventos y beneficios &uacute;nicos para comenzar a vender tus productos lo m&aacute;s pronto posible.</p>
                             <h3>Esp&eacute;ralo pronto 2017</h3>
-							<h3> Congratulations ! You are registered successfully. </h3>
+                            <h3 class="success">  </h3>
                             <a data-src="#registerForm" href="javascript: registerWindow.openWindow();">¡Reg&iacute;strate Gratis!</a>
                            
                         </div>

@@ -14,7 +14,7 @@ class UsersController extends AppController {
 
     public function beforeFilter(\Cake\Event\Event $event) {
         parent::beforeFilter($event);
-        $this->Auth->allow(['add', 'login', 'test', 'contact', 'invitefrnd','reg']);
+        $this->Auth->allow(['add', 'login', 'test', 'contact', 'invitefrnd', 'reg']);
     }
 
     /**
@@ -24,7 +24,7 @@ class UsersController extends AppController {
      */
     public function index() {
         $users = $this->paginate($this->Users);
-        $this->set(compact('users')); 
+        $this->set(compact('users'));
         $this->set('_serialize', ['users']);
     }
 
@@ -107,11 +107,9 @@ class UsersController extends AppController {
         return $this->redirect(['action' => 'index']);
     }
 
-    public function login(){
-   
+    public function login() {
+        
     }
-    
-    
 
     public function test() {
 //        $email = new Email('default');
@@ -150,26 +148,30 @@ class UsersController extends AppController {
     }
 
     public function invitefrnd() {
+        $inviteTable = \Cake\ORM\TableRegistry::get('Invites');
         if ($this->request->is('post')) {
-            //$name = $this->request->data['name_txt'];
-            $email_add = $this->request->data['email'];
-            $message_txt = $this->request->data['message'];
-            $subject = "Canasta Rosa invitation";           
-            $msg2 = "My Details: " . "<br>";
-            $msg3 = "Content: $message_txt" . "<br>";
-            $msg5 = "Thanks";
-            $message = $msg2 . '\r\n ' . $msg3 . '\r\n ' . $msg5;
-            $headers = 'Cc: anshuverma300@gmail.com' . "\r\n";
-            $headers = 'From: info@canastarosa.com' . "\r\n";
-            $headers = 'MIME-Version: 1.0' . "\r\n";
-            $headers = 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
-            $res=@mail($email_add, $subject, $message, $headers);
-            if($res){
-				    $this->set("res",array('r'=>1));
-					$this->response->type("json");
-					$this->render("/Common/ajax",'ajax');
-			}
-            
+            $invite = $inviteTable->newEntity();
+            $invite->email = $this->request->data['email'];
+            $invite->message = $this->request->data['message'];
+            if ($inviteTable->save($invite)) {
+                $email_add = $invite->email;
+                $message_txt = $invite->message;
+                $subject = "Canasta Rosa invitation";
+                $msg2 = "My Details: " . "<br>";
+                $msg3 = "Content: $message_txt" . "<br>";
+                $msg5 = "Thanks";
+                $message = $msg2 . '\r\n ' . $msg3 . '\r\n ' . $msg5;
+                $headers = 'Cc: progbass@gmail.com' . "\r\n";
+                $headers = 'From: info@canastarosa.com' . "\r\n";
+                $headers = 'MIME-Version: 1.0' . "\r\n";
+                $headers = 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+                $res = @mail($email_add, $subject, $message, $headers);
+                if ($res) {
+                    $this->set("res", array('r' => 1));
+                    $this->response->type("json");
+                    $this->render("/Common/ajax", 'ajax');
+                }
+            }
         }
     }
 
@@ -179,41 +181,44 @@ class UsersController extends AppController {
 
     public function reg() {
         $registerTable = \Cake\ORM\TableRegistry::get('Registrations');
+        $catTable = \Cake\ORM\TableRegistry::get('Categories');
         if ($this->request->is('post')) {
             $register = $registerTable->newEntity();
             $name = $this->request->data['name'];
-			$email_to="rakeshacn123@gmail.com";
+            $email_to = "progbass@gmail.com";
             $email = $this->request->data['email'];
             $code = $this->request->data['postal_code'];
             $mobiles = $this->request->data['mobile'];
-			$category = $this->request->data['category'];
-            if ($name && $email && $code && $mobile) {
-                $register->forms_type = "registration";
-                $register = $registerTable->patchEntity($register, $this->request->data);
-                if ($registerTable->save($register)) {
-                    $subject = "Canasta Rosa Registration";
-                    $msg1 = "Hi $name";
-          		    $msg2 = "My Details:";
-           		    $msg3 = "Email: $email";
-					$msg4 = "Zip: $code";
-					$msg5= 'Mobile : $mobiles';
-					$msg6 = "Category: $category";
-					$msg7 = "Thanks";
-                    $message = $msg1 . '<br> ' . $msg2 . '<br> ' . $msg3 . ' <br>' . $msg4.' <br>' . $msg5.' <br>' . $msg6.' <br>' . $msg7;
-                    $headers = 'From:  info@canastarosa.com' . "\r\n";
-                    $headers = 'MIME-Version: 1.0' . "\r\n";
-                    $headers = 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
-					@mail($email_to, $subject, $message, $headers);
-                  $res = @mail($email_to, $subject, $message, $headers);
-                   if($res){
-				    $this->set("res",array('r'=>1));
-					$this->response->type("json"); 
-					$this->rendor("/Common/ajax",'ajax');
-				   }
+            $cate = serialize($this->request->data['category']);
+            $register->name = $name;
+            $register->email = $email;
+            $register->postal_code = $code;
+            $register->mobile = $mobiles;
+            $register->forms_type = "registration";
+            $register->category = $cate;
+            $category = implode(" , ", $this->request->data['cat']);
+            if ($registerTable->save($register)) {
+                $subject = "Canasta Rosa Registration";
+                $msg1 = "Hi $name";
+                $msg2 = "My Details:";
+                $msg3 = "Email: $email";
+                $msg4 = "Zip: $code";
+                $msg5 = "Mobile : $mobiles";
+                $msg6 = "Category: $category";
+                $msg7 = "Thanks";
+                $message = $msg1 . '<br> ' . $msg2 . '<br> ' . $msg3 . ' <br>' . $msg4 . ' <br>' . $msg5 . ' <br>' . $msg6 . ' <br>' . $msg7;              
+                $headers = 'From:  info@canastarosa.com' . "\r\n";
+				$headers = 'Cc: akasolutionslimited@gmail.com' . "\r\n";
+                $headers = 'MIME-Version: 1.0' . "\r\n";
+                $headers = 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+                $res = @mail($email_to, $subject, $message, $headers);
+                if ($res) {
+                    $this->set("res", array('r' => 1));
+                    $this->response->type("json");
+                    $this->render("/Common/ajax", 'ajax');
                 }
             }
         }
     }
-
 
 }
